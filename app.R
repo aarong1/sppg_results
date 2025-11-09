@@ -24,9 +24,11 @@ library(profvis)
 source('./components/footer.R')
 source('modules/startup_overlay/startup_overlay_div.R')
 
+source('load_graphs_sppg.R')
 source('sppg_div.R')
 
-load('sppg2.RData')
+
+
 
 graph_wrapper <- function(..., header =NULL){
 

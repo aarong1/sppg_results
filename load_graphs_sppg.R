@@ -3,8 +3,7 @@ load('sppg2.RData')
 tbl
 load('sppg.RData')
 
-stroke_HSCT <- stroke_HSCT |>  e_match_bootstrap_font()
-stroke_age20
+stroke_HSCT
 stroke_sex
 stroke_mdm_quintile
 heart_failure_HSCT
