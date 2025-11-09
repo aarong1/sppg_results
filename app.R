@@ -28,7 +28,12 @@ source('modules/startup_overlay/startup_overlay_div.R')
 source('load_graphs_sppg.R')
 source('sppg_div.R')
 
-
+print('#################################')
+print(system.file(package = "sparkline"))
+print(dir(system.file("htmlwidgets/lib", package = "sparkline")))
+print(file.exists(system.file("htmlwidgets/lib/jquery.sparkline/jquery.sparkline.min.js",
+                        package = "sparkline")))
+print('#################################')
 
 
 graph_wrapper <- function(..., header =NULL){
