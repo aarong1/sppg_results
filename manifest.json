@@ -3222,6 +3222,31 @@
         "Archs": "sp.so.dSYM"
       }
     },
+    "sparkline": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "description": {
+        "Package": "sparkline",
+        "Type": "Package",
+        "Title": "'jQuery' Sparkline 'htmlwidget'",
+        "Version": "2.0",
+        "Date": "2016-11-10",
+        "Authors@R": "c(\n    person(\"Ramnath\", \"Vaidyanathan\", email = \"ramnath.vaidya@gmail.com\", role = c(\"aut\", \"cre\")),\n    person(\"Kent\", \"Russell\", email = \"kent.russell@timelyportfolio.com\", role = c(\"aut\", \"ctb\")),\n    person(\"Gareth\", \"Watts\", role = c(\"aut\", \"cph\"), comment = \"jquery.sparkline library in htmlwidgets/lib, https://github.com/gwatts/jquery.sparkline\"),\n    person(family = \"jQuery Foundation\", role = \"cph\", comment = \"jQuery library\"),\n    person(family = \"jQuery contributors\", role = c(\"ctb\", \"cph\"),\n      comment = \"jQuery library; authors listed in inst/htmlwidgets/lib/jquery/jquery-AUTHORS.txt\"\n    )\n  )",
+        "Maintainer": "Ramnath Vaidyanathan <ramnath.vaidya@gmail.com>",
+        "Description": "Include interactive sparkline charts\n    <http://omnipotent.net/jquery.sparkline> in \n    all R contexts with the convenience of 'htmlwidgets'.  ",
+        "Imports": "htmltools, htmlwidgets (>= 0.8)",
+        "Suggests": "formattable, knitr, rmarkdown, shiny",
+        "License": "MIT + file LICENSE",
+        "RoxygenNote": "5.0.1",
+        "VignetteBuilder": "knitr",
+        "NeedsCompilation": "no",
+        "Packaged": "2016-11-11 03:18:46 UTC; Kent",
+        "Author": "Ramnath Vaidyanathan [aut, cre],\n  Kent Russell [aut, ctb],\n  Gareth Watts [aut, cph] (jquery.sparkline library in htmlwidgets/lib,\n    https://github.com/gwatts/jquery.sparkline),\n  jQuery Foundation [cph] (jQuery library),\n  jQuery contributors [ctb, cph] (jQuery library; authors listed in\n    inst/htmlwidgets/lib/jquery/jquery-AUTHORS.txt)",
+        "Repository": "CRAN",
+        "Date/Publication": "2016-11-12 01:06:40",
+        "Built": "R 4.5.0; ; 2025-04-02 03:42:42 UTC; unix"
+      }
+    },
     "stringi": {
       "Source": "CRAN",
       "Repository": "https://cran.rstudio.com",
@@ -3963,7 +3988,7 @@
   },
   "files": {
     "app.R": {
-      "checksum": "6766a35d5e47b4c1c26f78260135f271"
+      "checksum": "aff278b10707c47f2ff0ea1b161c9fac"
     },
     "components/footer.R": {
       "checksum": "5a5f6adca7fb79a2efbac9474dfa9189"
