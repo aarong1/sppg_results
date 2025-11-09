@@ -10,6 +10,7 @@ library(fst)
 library(tidyverse)
 library(sf)
 library(profvis)
+library(sparkline)
 # load(".RData")
 
 # rm(past_populations,

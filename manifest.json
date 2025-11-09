@@ -3963,7 +3963,7 @@
   },
   "files": {
     "app.R": {
-      "checksum": "9ab9ae61b1b29a86ee20c734bef2196e"
+      "checksum": "6766a35d5e47b4c1c26f78260135f271"
     },
     "components/footer.R": {
       "checksum": "5a5f6adca7fb79a2efbac9474dfa9189"
@@ -3978,7 +3978,7 @@
       "checksum": "9b09efad901a9b0ac94d7666e1e02ec7"
     },
     "load_graphs_sppg.R": {
-      "checksum": "c21077c714ca786f1ddb9789e6cc9155"
+      "checksum": "6e3b9c1d05627b488d8cd764942f0169"
     },
     "match_font.R": {
       "checksum": "27f20e085993ca84340ca11ea290a6e8"
