@@ -1,0 +1,52 @@
+#https://codepen.io/7iomka/pen/NWqYrRg
+
+
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css">
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.min.js"></script>
+
+<div class="js-parent"><button data-template="one">One</button></div>
+<template id="one">
+  <strong>Content for `one`</strong>
+  <button data-template="nested">Nested in One</button>
+</template>
+
+<template id="nested">
+  <strong>Content for `nested in one`</strong>
+</template>
+</div>
+
+<script>
+
+
+const observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+        if (mutation.addedNodes.length) {
+            initializeTippy();
+        }
+    });
+});
+observer.observe(document.querySelector('.js-parent'), {
+		 childList: true,
+	});
+
+initializeTippy();
+function initializeTippy() {
+    return tippy('button', {
+        interactive: true,
+    trigger: 'mouseenter focus',   // <-- hover instead of click
+		 allowHTML: true,
+		 appendTo: 'parent',
+        content(reference) {
+            const id = reference.getAttribute('data-template');
+                const template = document.getElementById(id);
+                return template.innerHTML;
+        },
+    })
+}
+</script>
+
+

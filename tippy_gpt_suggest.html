@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css">
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.min.js"></script>
+
+<div class="js-parent">
+  <button data-template="one">One</button>
+</div>
+
+<template id="one">
+  <strong>Content for `one`</strong><br>
+  <button data-template="nested">Nested in One</button>
+</template>
+
+<template id="nested">
+  <strong>Content for `nested in one`</strong>
+</template>
+
+<script>
+  // One delegate handles *all* current + future matching nodes (incl. inside tooltips)
+  tippy.delegate(document.body, {
+    target: 'button[data-template]',
+    trigger: 'mouseenter focus',   // <-- hover instead of click
+    interactive: true,
+    allowHTML: true,
+    hideOnClick: false,            // keep parent open while interacting
+    animation: 'shift-away-subtle',
+    appendTo: document.body,       // safe against clipping/overflow
+    placement: 'right',
+    content(reference) {
+      const id = reference.getAttribute('data-template');
+      const tpl = document.getElementById(id);
+      return tpl ? tpl.innerHTML : '(missing template)';
+    }
+  });
+</script>

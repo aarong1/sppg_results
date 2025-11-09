@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css">
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.min.js"></script>
+
+<button id="helpBtn">How do I use this?</button>
+
+<div id="nested-tip-template" style="display:none;">
+  <!-- Same inner HTML as above -->
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  const tpl = document.getElementById('nested-tip-template');
+  tippy('#helpBtn', {
+    content: tpl.innerHTML,
+    allowHTML: true,
+    interactive: true,
+    trigger: 'click',
+    placement: 'right',
+    appendTo: () => document.body,
+    onShown(inst){
+      const root = inst.popper;
+      tippy(root.querySelectorAll('[data-tippy-content]'), {
+        allowHTML: true,
+        interactive: true,
+        placement: 'bottom',
+        appendTo: () => document.body
+      });
+    }
+  });
+});
+</script>
