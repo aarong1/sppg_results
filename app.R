@@ -1620,16 +1620,13 @@ $(document).ready(function() {
 # ============================================================================
 # SERVER
 # ============================================================================
+
 server <- function(input, output, session) {
 
   output$stroke_age20 <- renderEcharts4r({
-    (stroke_age20)
+    stroke_age20 |>
+      e_theme('roma')
     })
-
-  # output$`Belfast HSCT_stroke_prevalence.html` <- renderUI ({
-  #   includeHTML("Belfast HSCT_stroke_prevalence.html")
-  # })
-
 
   output$dummy <- renderEcharts4r({
     e_charts(mtcars ,cyl) %>%
