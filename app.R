@@ -1047,14 +1047,17 @@ document.addEventListener('shown.bs.tab', function (event) {
                                             div(id = "stroke", class = "pt-5", h2("Stroke")),
                                             div(id = "stroke_banner",ui_reactable, style = 'overflow:visible;width:60vw;padding-top:100px;padding-bottom:50px;font-size:0.7rem;'),
                                             div(id = "stroke_age", class = "pt-5", h4("Age")),
+
                                             echarts4rOutput('stroke_age20'),
                                             uiOutput('stroke_age20_ui'),
+
                                             # stroke_age20[[4]],
                                             # lapply(stroke_HSCT[[3]],print),
                                             # stroke_age20,
                                             # stroke_HSCT[[3]][[1]][[5]],
                                             # lapply(stroke_age20[[1]],print),
                                             # stroke_age20,
+
                                             echarts4rOutput("dummy", height = "100px"),
 
                                             # div(style = 'height:200px',
@@ -1630,14 +1633,16 @@ server <- function(input, output, session) {
 
 
   output$stroke_age20 <- renderEcharts4r({
-    stroke_age20[[2]]$dependencies =NULL
-
-    stroke_age20[[2]]
+    x <- stroke_age20[[2]]
+    x$dependencies = NULL
+    x
     })
 
 
   output$stroke_age20_ui <- renderUI({
-    stroke_age20[[3]]
+    x <- stroke_age20[[2]]
+    x$dependencies = NULL
+    x
   })
 
   output$dummy <- renderEcharts4r({
