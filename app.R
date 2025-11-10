@@ -1135,7 +1135,7 @@ $(document).ready(function() {
 "
 
                   ), # End tags$script
-                  echarts4rOutput("dummy", height = "0px")
+                  echarts4rOutput("dummy", height = "1px")
                   ), # End main-container
 
                   footer()
