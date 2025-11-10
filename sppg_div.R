@@ -372,7 +372,6 @@ document.addEventListener('shown.bs.tab', function (event) {
 
                #
                #div(class = 'col-9',
-                   #
                    # Scrollspy content container — requires height and overflow
                    div(style = 'padding-left:3%;',
                      id = "scrollspy-content",
