@@ -1043,16 +1043,20 @@ document.addEventListener('shown.bs.tab', function (event) {
                                             #tabindex = "0",
                                             style = "position: relative; overflow-y: auto; scroll-behavior: smooth;", # height: 100vh;
 
-
-
                                             # Stroke Section,
-
-                                            #
 
                                             div(id = "stroke", class = "pt-5", h2("Stroke")),
                                             div(id = "stroke_banner",ui_reactable, style = 'overflow:visible;width:60vw;padding-top:100px;padding-bottom:50px;font-size:0.7rem;'),
                                             div(id = "stroke_age", class = "pt-5", h4("Age")),
                                             echarts4r::echarts4rOutput('stroke_age20'),
+                                            # div(style = 'height:200px',
+                                            # tags$iframe(style = 'height:100px;', src = 'Belfast HSCT_stroke_prevalence.html')
+                                            # ),
+                                            # # renderhtmlwidget('Belfast HSCT_stroke_prevalence.html'),
+                                            # div(style = 'height:100px',
+                                            #     includeHTML( path = "Belfast HSCT_stroke_prevalence.html")
+                                            #     ),  # file lives in ./www/
+
                                             stroke_age20,
                                             # div(id = "stroke_sex", class = "pt-5", h4("Sex")),
                                             # stroke_sex,
@@ -1605,7 +1609,7 @@ $(document).ready(function() {
 "
 
                   ), # End tags$script
-                  echarts4rOutput("dummy", height = "1px")
+                  echarts4rOutput("dummy", height = "100px")
                   ), # End main-container
 
                   footer()
@@ -1617,8 +1621,12 @@ $(document).ready(function() {
 server <- function(input, output, session) {
 
   output$stroke_age20 <- renderEcharts4r({
-    stroke_age20
+    print(stroke_age20)
     })
+
+  # output$`Belfast HSCT_stroke_prevalence.html` <- renderUI ({
+  #   includeHTML("Belfast HSCT_stroke_prevalence.html")
+  # })
 
 
   output$dummy <- renderEcharts4r({
