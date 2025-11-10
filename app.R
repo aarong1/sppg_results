@@ -1630,6 +1630,8 @@ server <- function(input, output, session) {
 
 
   output$stroke_age20 <- renderEcharts4r({
+    stroke_age20[[2]]$dependencies =NULL
+
     stroke_age20[[2]]
     })
 
