@@ -1052,7 +1052,7 @@ document.addEventListener('shown.bs.tab', function (event) {
                                             div(id = "stroke", class = "pt-5", h2("Stroke")),
                                             div(id = "stroke_banner",ui_reactable, style = 'overflow:visible;width:60vw;padding-top:100px;padding-bottom:50px;font-size:0.7rem;'),
                                             div(id = "stroke_age", class = "pt-5", h4("Age")),
-                                            echarts4r::echartsOutput('stroke_age20'),
+                                            echarts4r::echarts4rOutput('stroke_age20'),
                                             # div(id = "stroke_sex", class = "pt-5", h4("Sex")),
                                             # stroke_sex,
                                             # div(id = "stroke_trust", class = "pt-5", h4("Trust")),
