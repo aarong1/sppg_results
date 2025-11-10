@@ -1050,7 +1050,7 @@ document.addEventListener('shown.bs.tab', function (event) {
                                             div(id = "stroke_age", class = "pt-5", h4("Age")),
                                             # echarts4rOutput('stroke_age20'),
                                             lapply(stroke_age20,print),
-                                            lapply(stroke_age20[[1]],print),
+                                            # lapply(stroke_age20[[1]],print),
                                             # stroke_age20,
                                             echarts4rOutput("dummy", height = "100px"),
 
