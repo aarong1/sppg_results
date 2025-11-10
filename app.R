@@ -1049,7 +1049,7 @@ document.addEventListener('shown.bs.tab', function (event) {
                                             div(id = "stroke_age", class = "pt-5", h4("Age")),
                                             echarts4rOutput('stroke_age20'),
                                             uiOutput('stroke_age20_ui'),
-                                            stroke_age20[[4]],
+                                            # stroke_age20[[4]],
                                             # lapply(stroke_HSCT[[3]],print),
                                             # stroke_age20,
                                             # stroke_HSCT[[3]][[1]][[5]],
