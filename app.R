@@ -1048,7 +1048,10 @@ document.addEventListener('shown.bs.tab', function (event) {
                                             div(id = "stroke", class = "pt-5", h2("Stroke")),
                                             div(id = "stroke_banner",ui_reactable, style = 'overflow:visible;width:60vw;padding-top:100px;padding-bottom:50px;font-size:0.7rem;'),
                                             div(id = "stroke_age", class = "pt-5", h4("Age")),
-                                            echarts4r::echarts4rOutput('stroke_age20'),
+                                            echarts4rOutput('stroke_age20'),
+                                            stroke_age20,
+                                            echarts4rOutput("dummy", height = "100px"),
+
                                             # div(style = 'height:200px',
                                             # tags$iframe(style = 'height:100px;', src = 'Belfast HSCT_stroke_prevalence.html')
                                             # ),
@@ -1057,7 +1060,7 @@ document.addEventListener('shown.bs.tab', function (event) {
                                             #     includeHTML( path = "Belfast HSCT_stroke_prevalence.html")
                                             #     ),  # file lives in ./www/
 
-                                            stroke_age20,
+                                            # stroke_age20,
                                             # div(id = "stroke_sex", class = "pt-5", h4("Sex")),
                                             # stroke_sex,
                                             # div(id = "stroke_trust", class = "pt-5", h4("Trust")),
@@ -1609,7 +1612,6 @@ $(document).ready(function() {
 "
 
                   ), # End tags$script
-                  echarts4rOutput("dummy", height = "100px")
                   ), # End main-container
 
                   footer()
@@ -1621,7 +1623,7 @@ $(document).ready(function() {
 server <- function(input, output, session) {
 
   output$stroke_age20 <- renderEcharts4r({
-    print(stroke_age20)
+    (stroke_age20)
     })
 
   # output$`Belfast HSCT_stroke_prevalence.html` <- renderUI ({
