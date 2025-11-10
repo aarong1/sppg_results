@@ -26,6 +26,7 @@ source('./components/footer.R')
 source('modules/startup_overlay/startup_overlay_div.R')
 
 source('load_graphs_sppg.R')
+source('chtgpt_banner_metrics_suggestion2.R')
 source('sppg_div.R')
 
 print('#################################')
@@ -547,7 +548,7 @@ text-decoration:none !important;
 
 
 
-                  div(class = 'w-100 navbar p-0 fixed-top d-flex gap-0 flex-column flex-wrap glass-card',
+                  div(class = 'w-100 navbar p-0 fixed-top border-0 d-flex gap-0 flex-column flex-wrap glass-card',
                       shiny::tags$nav(
                         #style='position:fixed;top:0px;left:0px',
                         class = "navbar w-100 glass-card p-3 rounded", # bg-light mt-5
@@ -580,21 +581,23 @@ text-decoration:none !important;
                       <i class="fas fa-tachometer-alt"></i>
                       <span class="fs-6">Overview</span>
                       </a>
-                      <a href="#evidence-section" class="nav-item bg-opacity-100 nav-iten p-1 px-4 rounded-pill text-white">
+                      <i class="fa-solid fa-chevron-right"></i>
+                      <a href="#evidence-section" class="nav-item bg-opacity-100 nav-iten p-1 m-3 px-4 rounded-pill text-white">
                       <i class="fas fa-exclamation-triangle"></i>
-                      <span class="fs-6">Evidence</span>
-                      </a>
-                      <a href="#prevalence-section" class="nav-item bg-opacity-100 nav-iten p-1 px-4 rounded-pill text-white">
-                      <i class="fas fa-tachometer-alt"></i>
                       <span class="fs-6">Prevalence</span>
                       </a>
-                      <a href="#incidence-section" class="nav-item bg-opacity-100 nav-iten p-1 px-4 rounded-pill text-white">
+                      <i class="fa-solid fa-chevron-right"></i>
+                      <a href="#prevalence-section" class="nav-item bg-opacity-100 nav-iten p-1 px-4 rounded-pill text-white">
+                      <i class="fas fa-tachometer-alt"></i>
+                      <span class="fs-6">Reports</span>
+                      </a>
+                      <!-- <a href="#incidence-section" class="nav-item bg-opacity-100 nav-iten p-1 px-4 rounded-pill text-white">
                       <i class="fas fa-map-marked-alt"></i>
                       <span class="fs-6">Incidence</span>
                       </a>
                       <a href="#downstream-section" class="nav-item bg-opacity-100 nav-iten p-1 m-3 px-4 rounded-pill text-white">
                       <i class="fas fa-users"></i>
-                      <span class="fs-6" > Dashboard</span>
+                      <span class="fs-6" > Dashboard</span> -->
                       </a>
                       </div>
                       </div>

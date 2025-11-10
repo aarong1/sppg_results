@@ -184,7 +184,7 @@ document.addEventListener('shown.bs.tab', function (event) {
             #   div( class="col-2",
          #div(style='',class = ' ms-2 p-3 d-flex flex-row',#shadow-sm glass-card
 
-         div(style = 'padding-left:15%;height:100vh;',
+         div(style = 'padding-left:15%;min-height:100vh;',
              id = "scrollspy-content",
              `data-bs-spy` = "scroll",
              `data-bs-target` = "#scrollspy-nav",
@@ -299,6 +299,7 @@ document.addEventListener('shown.bs.tab', function (event) {
                       tags$a(class = "nav-link", href = "#stroke", "Stroke", `data-value` = "interactive"),
 
                       tags$div(class = "nav flex-row ms-3 my-1",
+                               tags$a(class = "nav-link", href = "#stroke_banner", icon('table'), `data-value` = "interactive"),
                                tags$a(class = "nav-link", href = "#stroke_age", icon('person-cane'), `data-value` = "interactive"),
                                tags$a(class = "nav-link", href = "#stroke_sex", icon('venus-mars'), `data-value` = "interactive"),
                                tags$a(class = "nav-link", href = "#stroke_trust", icon('globe'), `data-value` = "interactive"),
@@ -373,7 +374,7 @@ document.addEventListener('shown.bs.tab', function (event) {
                #div(class = 'col-9',
                    #
                    # Scrollspy content container — requires height and overflow
-                   div(style = 'padding-left:5%;',
+                   div(style = 'padding-left:3%;',
                      id = "scrollspy-content",
                      `data-bs-spy` = "scroll",
                      `data-bs-target` = "#scrollspy-nav",
@@ -388,7 +389,7 @@ document.addEventListener('shown.bs.tab', function (event) {
                      #
                      #
                      div(id = "stroke", class = "pt-5", h2("Stroke")),
-                     div(tbl, style = 'overflow:visible;width:70vw;padding-top:100px;padding-bottom:50px;font-size:0.7rem;'),
+                     div(id = "stroke_banner",ui_reactable, style = 'overflow:visible;width:60vw;padding-top:100px;padding-bottom:50px;font-size:0.7rem;'),
                      div(id = "stroke_age", class = "pt-5", h4("Age")),
                      stroke_age20,
                      div(id = "stroke_sex", class = "pt-5", h4("Sex")),
