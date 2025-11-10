@@ -32,6 +32,10 @@ source('load_graphs_sppg.R')
 source('chtgpt_banner_metrics_suggestion2.R')
 source('sppg_div.R')
 
+x <- stroke_age20[[2]]
+x$dependencies = NULL
+x
+
 print('#################################')
 print(system.file(package = "sparkline"))
 print(dir(system.file("htmlwidgets/lib", package = "sparkline")))
@@ -1050,6 +1054,8 @@ document.addEventListener('shown.bs.tab', function (event) {
 
                                             echarts4rOutput('stroke_age20'),
                                             uiOutput('stroke_age20_ui'),
+
+                                            x,
 
                                             # stroke_age20[[4]],
                                             # lapply(stroke_HSCT[[3]],print),
