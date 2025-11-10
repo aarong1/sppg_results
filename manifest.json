@@ -3656,7 +3656,7 @@
   },
   "files": {
     "app.R": {
-      "checksum": "0656eee3955d853768792909465f5980"
+      "checksum": "faf013eef5ad8e2dbf601704fbb481e2"
     },
     "chatgpt_banner_metrics_suggestions.R": {
       "checksum": "8de1ee77e6ee3450b7ed560cfafcc1d4"
@@ -3752,7 +3752,7 @@
       "checksum": "26611d7911bbd8e4749fec8c8298390e"
     },
     "modules/startup_overlay/button_block_box_shadow.R": {
-      "checksum": "753fa5a11189de792f861e058a150f9c"
+      "checksum": "38875d75c5963c84b4d5455227255399"
     },
     "modules/startup_overlay/startup_overlay_div.R": {
       "checksum": "efbb7c550294920d5f322511cdfedd57"

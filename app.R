@@ -1,6 +1,6 @@
 
 
-# library(htmltools)
+library(htmltools)
 library(shiny)
 library(echarts4r)
 library(bslib)
