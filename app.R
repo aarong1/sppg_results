@@ -39,7 +39,6 @@ print(file.exists(system.file("htmlwidgets/lib/jquery.sparkline/jquery.sparkline
 
 print('#################################')
 
-
 graph_wrapper <- function(..., header =NULL){
 
   div(class = "grid-item grid-item--graph theme-green",
@@ -1050,6 +1049,7 @@ document.addEventListener('shown.bs.tab', function (event) {
                                             div(id = "stroke_age", class = "pt-5", h4("Age")),
                                             echarts4rOutput('stroke_age20'),
                                             uiOutput('stroke_age20_ui'),
+                                            stroke_age20[[4]],
                                             # lapply(stroke_HSCT[[3]],print),
                                             # stroke_age20,
                                             # stroke_HSCT[[3]][[1]][[5]],
@@ -1630,12 +1630,12 @@ server <- function(input, output, session) {
 
 
   output$stroke_age20 <- renderEcharts4r({
-    stroke_age20
+    stroke_age20[[2]]
     })
 
 
   output$stroke_age20_ui <- renderUI({
-    stroke_age20
+    stroke_age20[[3]]
   })
 
   output$dummy <- renderEcharts4r({
