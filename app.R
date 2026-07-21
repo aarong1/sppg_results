@@ -26,7 +26,7 @@ e_charts(data.frame(x=1:10, y= 1:10),x) %>%
   e_theme('auritus')
 
 system("ls -lh")        # list files
-system("ls /Library/Frameworks/R.framework/Versions/4.5-arm64/Resources/library/echarts4r/htmlwidgets/lib/echarts-6.0.0/themes")
+system("ls /Library/Frameworks/R.framework/Versions/4.5-arm64/Resources/library")
 system("echo Hello!")   # print message
 
 source('./components/footer.R')
