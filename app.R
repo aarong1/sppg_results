@@ -39,7 +39,7 @@ source('sppg_div.R')
 # x <- stroke_age20[[2]]
 # x$dependencies = NULL
 # x <- x |> e_hide_grid_lines()
-
+ls( "/cloud/lib/x86_64-pc-linux-gnu-library/4.5/echarts4r")
 print('#################################')
 print(system.file(package = "sparkline"))
 print(dir(system.file("htmlwidgets/lib", package = "sparkline")))
