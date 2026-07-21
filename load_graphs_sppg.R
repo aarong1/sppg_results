@@ -9,7 +9,7 @@ load('sppg_metrics.RData')
 yll_info_boxes
 yld_info_boxes
 
-qaly_info_boxes['stroke_low']
+# qaly_info_boxes['stroke_low']
 
 cost_info_boxes['stroke_low']
 
