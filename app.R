@@ -21,7 +21,7 @@ library(sparkline)
 #    teset_population,stroke_incidence,
 #    population_w_established_prevalence,new_year_pop,wrapping_examples_in_function)
 # rm(list=ls())
-
+print(browsable(stroke_age20))
 system("ls -lh")        # list files
 
 system("echo Hello!")   # print message
@@ -1704,6 +1704,6 @@ server <- function(input, output, session) {
 
 
 }
-print(stroke_age20)
+print(browsable(stroke_age20))
 
 shinyApp(ui = ui, server = server)
