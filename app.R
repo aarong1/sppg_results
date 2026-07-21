@@ -69,7 +69,7 @@ ui <- page_fluid(
 
                   startup_overlay_div(5000,7000),
   div(id = 'main-content', #class = "visually-hidden",
-      div(style = 'visibility:hidden',
+      div(#style = 'visibility:hidden',
           echarts4rOutput('echarts_test', height = '0px', width = '0px')
       ),
 
