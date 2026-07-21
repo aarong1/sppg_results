@@ -3,7 +3,7 @@ footer <- function(){
                                  <footer class="dashboard-footer">
                                  <div class="footer-content">
                                  <div class="footer-info">
-                                 <p>&copy;  Obesity - Data runs of the Population health Models microsimulation, data are estimates </p>
+                                 <p>&copy;   Disease Prevalence - Data runs of the Population health Models microsimulation, data are estimates </p>
                                  <p>Data is updated periodically when underlying datasets are released from their respective providers </p>
                                  </div>
                                  <div class="footer-links">

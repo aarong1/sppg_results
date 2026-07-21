@@ -29,11 +29,11 @@ ui_reactable <- fluidPage(
     rownames = FALSE, defaultColDef = colDef(html = TRUE, align = "left"),
     columns = list(
       disease = colDef(name = "", cell = \(val) cell("Disease", "Stroke","2023–2037","▲ +6,587", TRUE)),
-      trend   = colDef(name = "", cell = \(val) cell("Trend", "↑ 16%","smoothed trend")),
+      trend   = colDef(show =F,name = "", cell = \(val) cell("Trend", "↑ 16%","smoothed trend")),
       y23     = colDef(name = "", cell = \(val) cell("2023", "41,388","CI 41,134–41,642")),
       y37     = colDef(name = "", cell = \(val) cell("2037", "47,975","CI 43,179–52,771")),
       daly    = colDef(name = "", cell = \(val) cell("Burden", "21K → 24K","DALYs 2023→2037")),
-      pounds  = colDef(name = "", cell = \(val) cell("£ Trends", "Rising","Healthcare costs")),
+      pounds  = colDef(show =F, name = "", cell = \(val) cell("£ Trends", "Rising","Healthcare costs")),
       cost    = colDef(name = "", cell = \(val) cell("Cost (cum.)", "£4.46B","£224M 2023 • £393M 2037"))
     )
   )

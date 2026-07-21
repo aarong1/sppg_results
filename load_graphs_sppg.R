@@ -1,7 +1,23 @@
 load('sppg2.RData')
 
 #tbl
-load('sppg.RData')
+# load('sppg.RData')
+load('sppg_new.RData')
+
+load('sppg_metrics.RData')
+
+yll_info_boxes
+yld_info_boxes
+
+qaly_info_boxes['stroke_low']
+
+cost_info_boxes['stroke_low']
+
+yld_info_boxes['stroke_low']
+
+lost_prod
+hosp
+
 
 # stroke_HSCT
 # stroke_sex

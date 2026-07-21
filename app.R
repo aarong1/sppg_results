@@ -26,7 +26,7 @@ system("ls -lh")        # list files
 system("echo Hello!")   # print message
 
 source('./components/footer.R')
-source('modules/startup_overlay/startup_overlay_div.R')
+source('./components/startup_overlay/startup_overlay_div.R',chdir = T)
 
 source('load_graphs_sppg.R')
 source('chtgpt_banner_metrics_suggestion2.R')
@@ -60,13 +60,16 @@ graph_wrapper <- function(..., header =NULL){
 
 # theme_x <- readLines('theme.json')
 
-ui <- page_fluid( id = 'main-content',
+ui <- page_fluid(
                   theme = bs_theme(version = 5,
                                    bootswatch = 'litera',
                                    font_scale = 0.8,
                                    primary = 'black'),
 
-                  # startup_overlay_div(5000,7000),
+                  startup_overlay_div(5000,7000),
+  div(id = 'main-content', #class = "visually-hidden",
+
+      #style = "opacity:0;",
 
                   tags$head(
                     # Include external dependencies
@@ -552,8 +555,6 @@ text-decoration:none !important;
 
                   # Control Panel
 
-
-
                   div(class = 'w-100 navbar p-0 fixed-top border-0 d-flex gap-0 flex-column flex-wrap glass-card',
                       shiny::tags$nav(
                         #style='position:fixed;top:0px;left:0px',
@@ -659,7 +660,6 @@ text-decoration:none !important;
 
                   ),
 
-
                   div(class = "main-container", `data-bs-spy` = "scroll", `data-bs-target` = "#top-nav-content", `data-bs-offset` = "70",
                       # div(class='mt-5 pt-5')
                       # Main content area
@@ -673,9 +673,7 @@ text-decoration:none !important;
                               div(id = "dashboard-tab", class = "tab-pane show active", #
 
                                   div(class = "container-fluid",
-                                      style = "padding-left: 0%;padding-top:8%;padding-right:10%",
-
-
+                                      style = "padding-left: 0%;padding-top:8%;padding-right:15%",
 
                                       div(
                                         tags$head(
@@ -1038,7 +1036,7 @@ document.addEventListener('shown.bs.tab', function (event) {
                                         #div(class = 'col-9',
 
                                         # Scrollspy content container — requires height and overflow
-                                        div(style = 'padding-left:3%;',
+                                        div(style = 'padding-left:13%;',
                                             id = "scrollspy-content",
                                             `data-bs-spy` = "scroll",
                                             `data-bs-target` = "#scrollspy-nav",
@@ -1049,7 +1047,15 @@ document.addEventListener('shown.bs.tab', function (event) {
                                             # Stroke Section,
 
                                             div(id = "stroke", class = "pt-5", h2("Stroke")),
-                                            div(id = "stroke_banner",ui_reactable, style = 'overflow:visible;width:70vw;padding-top:100px;padding-bottom:50px;font-size:0.7rem;'),
+                                            div(id = "stroke_banner",
+                                                ui_reactable,
+                                                div(class= 'd-flex',
+                                                  qaly_info_boxes['stroke_low'],
+                                                  cost_info_boxes['stroke_low'],
+                                                  yld_info_boxes['stroke_low']
+                                                ),
+                                                style = 'overflow:visible;width:50vw;padding-top:100px;padding-bottom:50px;font-size:0.7rem;'),
+
                                             div(id = "stroke_age", class = "pt-5", h4("Age")),
 
                                             # echarts4rOutput('stroke_age20'),
@@ -1452,6 +1458,36 @@ document.addEventListener('shown.bs.tab', function (event) {
                   # Initialize Packery with Click and Expand JavaScript
                   tags$script(HTML("
 $(document).ready(function() {
+  function resizeAllEcharts() {
+    if (!window.echarts || typeof echarts.getInstanceByDom !== 'function') {
+      return;
+    }
+
+    $('.echarts4r, .echarts, [id$=\"-chart_container\"]').each(function() {
+      var chartInstance = echarts.getInstanceByDom(this);
+      if (chartInstance && typeof chartInstance.resize === 'function') {
+        chartInstance.resize();
+      }
+    });
+
+    if (window.interventionCharts) {
+      Object.keys(window.interventionCharts).forEach(function(moduleId) {
+        var chart = window.interventionCharts[moduleId];
+        if (chart && typeof chart.resize === 'function') {
+          chart.resize();
+        }
+      });
+    }
+  }
+
+  var resizeTimeout = null;
+  $(window).off('resize.echartsAutoResize').on('resize.echartsAutoResize', function() {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(function() {
+      resizeAllEcharts();
+    }, 120);
+  });
+
   // Initialize Packery when the page loads
   setTimeout(function() {
     var $grid = $('.grid').packery({
@@ -1493,18 +1529,9 @@ $(document).ready(function() {
     });
 
     $('.chart-card').on('click', function() {
-      console.log('resize');
       // Trigger ECharts resize
       setTimeout(function() {
-        $('.echarts4r').each(function() {
-
-          //if (this.echartsInstance) {
-          console.log('resizeIn');
-          console.log(this);
-          echarts.getInstanceByDom(this).resize();
-            //this.echartsInstance.resize();
-          //}
-        });
+        resizeAllEcharts();
       }, 300);
     });
 
@@ -1624,7 +1651,7 @@ $(document).ready(function() {
                   ), # End main-container
 
                   footer()
-)
+))
 
 # ============================================================================
 # SERVER
