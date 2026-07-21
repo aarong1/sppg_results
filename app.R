@@ -70,7 +70,7 @@ ui <- page_fluid(
                   startup_overlay_div(5000,7000),
   div(id = 'main-content', #class = "visually-hidden",
       div(#style = 'visibility:hidden',
-          echarts4rOutput('echarts_test', height = '0px', width = '0px')
+          echarts4rOutput('echarts_test', height = '0px', width = '10px')
       ),
 
       #style = "opacity:0;",
@@ -1665,7 +1665,7 @@ server <- function(input, output, session) {
 
   output$echarts_test <- renderEcharts4r( {
     e_charts(data.frame(x=1:10, y= 1:10),x) %>%
-      e_line(y)
+      e_line(y) %>%
                e_theme('auritus')
   })
 
@@ -1704,6 +1704,6 @@ server <- function(input, output, session) {
 
 
 }
-
+print(stroke_age20)
 
 shinyApp(ui = ui, server = server)
