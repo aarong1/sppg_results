@@ -46,6 +46,11 @@ print(dir(system.file("htmlwidgets/lib", package = "sparkline")))
 print(file.exists(system.file("htmlwidgets/lib/jquery.sparkline/jquery.sparkline.min.js", package = "sparkline")))
 
 print('#################################')
+print(system.file(package = "echarts4r"))
+print(dir(system.file("htmlwidgets/lib", package = "echarts4r")))
+# print(file.exists(system.file("htmlwidgets/lib/jquery.sparkline/jquery.sparkline.min.js", package = "sparkline")))
+
+print('#################################')
 
 graph_wrapper <- function(..., header =NULL){
 
