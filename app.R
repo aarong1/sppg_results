@@ -21,6 +21,7 @@ library(sparkline)
 #    teset_population,stroke_incidence,
 #    population_w_established_prevalence,new_year_pop,wrapping_examples_in_function)
 # rm(list=ls())
+
 e_charts(data.frame(x=1:10, y= 1:10),x) %>%
   e_line(y) %>%
   e_theme('auritus')
@@ -39,13 +40,13 @@ source('sppg_div.R')
 # x <- stroke_age20[[2]]
 # x$dependencies = NULL
 # x <- x |> e_hide_grid_lines()
-ls( "/cloud/lib/x86_64-pc-linux-gnu-library/4.5/echarts4r")
 print('#################################')
 print(system.file(package = "sparkline"))
 print(dir(system.file("htmlwidgets/lib", package = "sparkline")))
 print(file.exists(system.file("htmlwidgets/lib/jquery.sparkline/jquery.sparkline.min.js", package = "sparkline")))
 
 print('#################################')
+ls( "/cloud/lib/x86_64-pc-linux-gnu-library/4.5/echarts4r")
 print(system.file(package = "echarts4r"))
 print(dir(system.file("htmlwidgets/lib", package = "echarts4r")))
 # print(file.exists(system.file("htmlwidgets/lib/jquery.sparkline/jquery.sparkline.min.js", package = "sparkline")))
