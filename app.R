@@ -1664,7 +1664,9 @@ $(document).ready(function() {
 server <- function(input, output, session) {
 
   output$echarts_test <- renderEcharts4r( {
-    stroke_age20
+    e_charts(data.frame(x=1:10, y= 1:10),x) %>%
+      e_line(y)
+               e_theme('auritus')
   })
 
   # output$stroke_age20 <- renderEcharts4r({
