@@ -24,7 +24,6 @@ library(sparkline)
 
 system("ls -lh")        # list files
 
-
 system("echo Hello!")   # print message
 
 source('./components/footer.R')
