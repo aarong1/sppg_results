@@ -2,10 +2,10 @@ load('sppg2.RData')
 
 #tbl
 # load('sppg.RData')
-load('sppg_new.RData')
+# load('sppg_new.RData')
 
 load('sppg_metrics.RData')
-
+source('sppg_echarts4r.R')
 yll_info_boxes
 yld_info_boxes
 

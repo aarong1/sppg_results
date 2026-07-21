@@ -28,6 +28,8 @@ e_charts(data.frame(x=1:10, y= 1:10),x) %>%
 
 system("ls -lh")        # list files
 system("ls /Library/Frameworks/R.framework/Versions/4.5-arm64/Resources/library")
+system("ls /Library/Frameworks/R.framework/Versions/4.5-arm64/Resources/library/echarts4r/htmlwidgets/lib/echarts-6.0.0/themes")
+
 system("echo Hello!")   # print message
 
 source('./components/footer.R')
@@ -47,7 +49,7 @@ print(dir(system.file("htmlwidgets/lib", package = "sparkline")))
 print(file.exists(system.file("htmlwidgets/lib/jquery.sparkline/jquery.sparkline.min.js", package = "sparkline")))
 
 print('#################################')
-system(" ls /cloud/lib/x86_64-pc-linux-gnu-library/4.5/echarts4r")
+system(" ls /cloud/lib/x86_64-pc-linux-gnu-library/4.5/echarts4r/htmlwidgets")
 print(system.file(package = "echarts4r"))
 print(dir(system.file("htmlwidgets/lib", package = "echarts4r")))
 # print(file.exists(system.file("htmlwidgets/lib/jquery.sparkline/jquery.sparkline.min.js", package = "sparkline")))
