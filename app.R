@@ -26,7 +26,7 @@ e_charts(data.frame(x=1:10, y= 1:10),x) %>%
   e_theme('auritus')
 
 system("ls -lh")        # list files
-
+system("ls /Library/Frameworks/R.framework/Versions/4.5-arm64/Resources/library/echarts4r/htmlwidgets/lib/echarts-6.0.0/themes")
 system("echo Hello!")   # print message
 
 source('./components/footer.R')
@@ -35,12 +35,6 @@ source('./components/startup_overlay/startup_overlay_div.R',chdir = T)
 source('load_graphs_sppg.R')
 source('chtgpt_banner_metrics_suggestion2.R')
 source('sppg_div.R')
-
-e_charts(data.frame(x=1:10, y= 1:10),x) %>%
-  e_line(y) %>%
-  e_theme('auritus')
-
-print(browsable(stroke_age20))
 
 # x <- stroke_age20[[2]]
 # x$dependencies = NULL
@@ -1672,13 +1666,6 @@ $(document).ready(function() {
 
 server <- function(input, output, session) {
 
-  output$echarts_test <- renderEcharts4r( {
-
-    e_charts(data.frame(x=1:10, y= 1:10),x) %>%
-      e_line(y) %>%
-      e_theme('auritus')
-
-  })
 
   # output$stroke_age20 <- renderEcharts4r({
   #   # x <- stroke_age20[[2]]
