@@ -21,6 +21,9 @@ library(sparkline)
 #    teset_population,stroke_incidence,
 #    population_w_established_prevalence,new_year_pop,wrapping_examples_in_function)
 # rm(list=ls())
+e_charts(data.frame(x=1:10, y= 1:10),x) %>%
+  e_line(y) %>%
+  e_theme('auritus')
 
 system("ls -lh")        # list files
 
@@ -32,6 +35,10 @@ source('./components/startup_overlay/startup_overlay_div.R',chdir = T)
 source('load_graphs_sppg.R')
 source('chtgpt_banner_metrics_suggestion2.R')
 source('sppg_div.R')
+
+e_charts(data.frame(x=1:10, y= 1:10),x) %>%
+  e_line(y) %>%
+  e_theme('auritus')
 
 print(browsable(stroke_age20))
 
@@ -1666,9 +1673,11 @@ $(document).ready(function() {
 server <- function(input, output, session) {
 
   output$echarts_test <- renderEcharts4r( {
+
     e_charts(data.frame(x=1:10, y= 1:10),x) %>%
       e_line(y) %>%
-               e_theme('auritus')
+      e_theme('auritus')
+
   })
 
   # output$stroke_age20 <- renderEcharts4r({
