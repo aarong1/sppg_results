@@ -1051,7 +1051,7 @@ document.addEventListener('shown.bs.tab', function (event) {
                                             div(id = "stroke_banner",
                                                 ui_reactable,
                                                 div(class= 'd-flex',
-                                                  qaly_info_boxes['stroke_low'],
+                                                  # qaly_info_boxes['stroke_low'],
                                                   cost_info_boxes['stroke_low'],
                                                   yld_info_boxes['stroke_low']
                                                 ),
