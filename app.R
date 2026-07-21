@@ -21,7 +21,7 @@ library(sparkline)
 #    teset_population,stroke_incidence,
 #    population_w_established_prevalence,new_year_pop,wrapping_examples_in_function)
 # rm(list=ls())
-print(browsable(stroke_age20))
+
 system("ls -lh")        # list files
 
 system("echo Hello!")   # print message
@@ -32,6 +32,8 @@ source('./components/startup_overlay/startup_overlay_div.R',chdir = T)
 source('load_graphs_sppg.R')
 source('chtgpt_banner_metrics_suggestion2.R')
 source('sppg_div.R')
+
+print(browsable(stroke_age20))
 
 # x <- stroke_age20[[2]]
 # x$dependencies = NULL
