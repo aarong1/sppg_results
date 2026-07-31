@@ -34,7 +34,7 @@ system("echo Hello!")   # print message
 
 source('./components/footer.R')
 source('./components/startup_overlay/startup_overlay_div.R',chdir = T)
-
+#
 source('load_graphs_sppg.R')
 source('chtgpt_banner_metrics_suggestion2.R')
 source('sppg_div.R')
@@ -79,7 +79,7 @@ ui <- page_fluid(
                                    font_scale = 0.8,
                                    primary = 'black'),
 
-                  startup_overlay_div(5000,7000),
+                  startup_overlay_div(9000,11000),
   div(id = 'main-content', #class = "visually-hidden",
       div(#style = 'visibility:hidden',
           echarts4rOutput('echarts_test', height = '0px', width = '10px')

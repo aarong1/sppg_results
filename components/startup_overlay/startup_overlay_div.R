@@ -1,6 +1,6 @@
 
 source('./button_block_box_shadow.R')
-startup_overlay_div <- function(overlay_out_time_ms = 500, main_in_time_ms=700){
+startup_overlay_div <- function(overlay_out_time_ms = 5000, main_in_time_ms=7000){
 
 tags$div(id = "startup-overlay",
          tags$head(HTML('<style>
@@ -33,7 +33,7 @@ tags$div(id = "startup-overlay",
 .progress1 {
     width: 0;
     height: 100%;
-    background-color: #FCB001;
+    background-color: #ffd700;
     animation: fill1 2s ease 3s 1 forwards;
     z-index:1001;
 }
@@ -96,12 +96,15 @@ style = "
     justify-content: center;
     align-items: center;
     z-index: 10040;
-  ", div(style = 'overflow:hidden; background-color:#FCB001;margin:10px;border-radius:15px;
+  ", div(style = 'overflow:hidden;
+
+  background:linear-gradient(55deg, orange 5%, #ffd700 37%, #ffde6f 75%);
+  margin:10px;border-radius:15px;
         height:96%;width:96%;
          top:2%;left:2%;
          display:flex;justify-content:center;align-items:center;flex-direction:column;',
               #rgb(122,236,244);
-
+         # background-color:#FCB001;
          button_block(border = 'white',
                       h1(class = 'hello','Population Health Modelling'),
                       span(class = '', 'Disease Prevalence')
